@@ -47,7 +47,6 @@ jobs:
       - name: Get bucket name
         id: bucket
         run: |
-          terraform init -backend=false
           TARGET="${{ steps.env.outputs.target }}"
           BUCKET_NAME="deploy-lab-${TARGET}"
           echo "name=$BUCKET_NAME" >> "$GITHUB_OUTPUT"
